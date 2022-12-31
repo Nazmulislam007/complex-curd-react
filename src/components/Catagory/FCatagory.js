@@ -6,7 +6,7 @@ import SCatagory from './SCatagory';
 export default function FCatagory({ catagory, item }) {
     const [show, setShow] = useState(false);
     const { addSelectedData, userData } = useItems();
-    console.log(userData);
+    console.log(userData.selected);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
