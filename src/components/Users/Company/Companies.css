@@ -1,0 +1,20 @@
+/* company  */
+.companies .company .company-name {
+  font-size: 0.9rem;
+  margin: 0.6rem 0;
+}
+
+.companies .company .company-catagories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.companies .company .company-catagories p {
+  font-size: 0.9rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+
+  background: #bdc3c73f;
+  color: rgb(68, 68, 68);
+}

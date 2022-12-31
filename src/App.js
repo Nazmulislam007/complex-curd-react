@@ -1,25 +1,18 @@
-import logo from './logo.svg';
+/* eslint-disable no-shadow */
+import { useState } from 'react';
 import './App.css';
+import Items from './components/items/Items';
+import Users from './components/Users/Users';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [showEditItems, setShowEditItems] = useState(false);
+
+    return (
+        <>
+            <Users setShowEditItems={setShowEditItems} />
+            {showEditItems && <Items setShowEditItems={setShowEditItems} />}
+        </>
+    );
 }
 
 export default App;

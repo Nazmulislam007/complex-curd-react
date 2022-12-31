@@ -1,0 +1,88 @@
+.users_container {
+  --gray: rgb(216, 216, 216);
+  max-width: 800px;
+  margin-inline: auto;
+  margin-top: 5rem;
+  border: 0.5px solid var(--gray);
+}
+
+.container-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem;
+  border-bottom: 0.5px solid var(--gray);
+}
+
+.container-header .header-text {
+  font-size: 1.6rem;
+}
+
+.container-header .add-icon {
+  height: 2rem;
+  width: 2rem;
+  background: var(--col-green);
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+
+  display: grid;
+  place-content: center;
+}
+
+.add-icon:hover {
+  transition: var(--trans-300);
+  background: var(--col-green-hover);
+}
+
+/* single user */
+
+.user {
+  padding: 1.25rem;
+}
+
+.user-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.user-header .user-name {
+  font-size: 1.3rem;
+  margin-top: -0.4rem;
+}
+
+.user-header .action-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.user-header .action-icons div {
+  width: 2rem;
+  height: 2rem;
+  color: var(--col-red);
+  background: var(--col-red-light);
+  border-radius: 50%;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-header .action-icons div:first-child {
+  color: var(--col-green);
+  background: var(--col-green-light);
+}
+
+.user-header .action-icons div:hover {
+  background: rgba(255, 11, 11, 0.267);
+  transition: var(--trans-300);
+}
+
+.user-header .action-icons div:first-child:hover {
+  background: rgba(11, 255, 35, 0.267);
+  transition: var(--trans-300);
+}
