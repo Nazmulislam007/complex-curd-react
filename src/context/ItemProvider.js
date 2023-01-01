@@ -33,7 +33,14 @@ export default function ItemProvider({ children }) {
         });
     };
 
-    const value = useMemo(() => ({ ...state, addSelectedData }), [state]);
+    const removeSelectedData = (value) => {
+        dispatch({
+            type: 'REMOVE_SELECTED_DATA',
+            payload: value,
+        });
+    };
+
+    const value = useMemo(() => ({ ...state, addSelectedData, removeSelectedData }), [state]);
 
     return <ItemContext.Provider value={value}>{children}</ItemContext.Provider>;
 }

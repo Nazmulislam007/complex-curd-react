@@ -39,6 +39,30 @@ const reducer = (state, action) => {
                 },
             };
         }
+
+        case 'REMOVE_SELECTED_DATA': {
+            const removeItem = () => {
+                const existingItem = state.userData.selected
+                    .map((select) => ({
+                        ...select,
+                        f_catagory: select.f_catagory.filter(
+                            (cata) => cata.value !== action.payload.f_catagory.value
+                        ),
+                    }))
+                    .filter((item) => item.f_catagory.length !== 0);
+
+                return existingItem;
+            };
+
+            return {
+                ...state,
+                userData: {
+                    ...state.userData,
+                    selected: [...removeItem()],
+                },
+            };
+        }
+
         default:
             return state;
     }

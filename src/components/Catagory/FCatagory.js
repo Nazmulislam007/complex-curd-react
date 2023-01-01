@@ -5,16 +5,25 @@ import SCatagory from './SCatagory';
 
 export default function FCatagory({ catagory, item }) {
     const [show, setShow] = useState(false);
-    const { addSelectedData, userData } = useItems();
+    const [selected, setSelected] = useState(true);
+    const { addSelectedData, userData, removeSelectedData } = useItems();
     console.log(userData.selected);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        addSelectedData({
-            name: item?.name,
-            value: item?.value,
-            f_catagory: { name, value },
-        });
+        setSelected(() => !selected);
+
+        if (selected) {
+            addSelectedData({
+                name: item?.name,
+                value: item?.value,
+                f_catagory: { name, value },
+            });
+        } else {
+            removeSelectedData({
+                f_catagory: { value },
+            });
+        }
     };
 
     return (
