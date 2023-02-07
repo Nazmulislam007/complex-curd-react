@@ -2,7 +2,7 @@
   --gray: rgb(216, 216, 216);
   max-width: 800px;
   margin-inline: auto;
-  margin-top: 5rem;
+  margin-block: 5rem;
   border: 0.5px solid var(--gray);
 }
 
@@ -39,6 +39,7 @@
 
 .user {
   padding: 1.25rem;
+  border-bottom: 0.5px solid var(--gray);
 }
 
 .user-header {

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export default function GetItems() {
+export default function useGetItems() {
     const [items, setItems] = useState([]);
 
     useEffect(() => {

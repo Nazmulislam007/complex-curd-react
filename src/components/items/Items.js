@@ -1,12 +1,33 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useItems } from '../../context/ItemProvider';
 import Item from './Item';
 import './Items.css';
 
 export default function Items({ setShowEditItems }) {
     const [showDropDown, setShowDropDown] = useState(false);
-    const { items } = useItems() || {};
+    const [userName, setUserName] = useState('');
+    const { items, userData, dispatch, postItem, fetchEditedPost } = useItems() || {};
+
+    useEffect(() => {
+        if (fetchEditedPost) {
+            setUserName(fetchEditedPost.userName);
+        }
+    }, [fetchEditedPost]);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        postItem({
+            ...userData,
+            id: Date.now(),
+            userName: userName.charAt(0).toUpperCase() + userName.slice(1),
+        });
+
+        dispatch({
+            type: 'CLEAR_SUBMIT_DATA',
+        });
+        setShowEditItems(false);
+    };
 
     return (
         <div className="container">
@@ -14,9 +35,15 @@ export default function Items({ setShowEditItems }) {
                 <div className="close-icon" onClick={() => setShowEditItems(false)}>
                     <i className="fa-solid fa-circle-xmark fa-lg" />
                 </div>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <label htmlFor="name">
-                        <input type="text" id="name" placeholder="Input your name" />
+                        <input
+                            type="text"
+                            id="name"
+                            value={userName}
+                            placeholder="Input your name"
+                            onChange={(e) => setUserName(e.target.value)}
+                        />
                         <span>Full name</span>
                     </label>
                     <div className="industry-label">

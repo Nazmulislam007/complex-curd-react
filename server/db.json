@@ -357,5 +357,51 @@
         }
       ]
     }
+  ],
+  "posts": [
+    {
+      "userName": "Tech",
+      "selected": [
+        {
+          "name": "Manufacture",
+          "value": 1,
+          "f_catagory": [
+            {
+              "name": "Construction materials",
+              "value": "19"
+            },
+            {
+              "name": "Electronics and Optics",
+              "value": "18"
+            }
+          ]
+        },
+        {
+          "name": "Other",
+          "value": 3,
+          "f_catagory": [
+            {
+              "name": "Creative industries",
+              "value": "37"
+            },
+            {
+              "name": "Energy technology",
+              "value": "29"
+            }
+          ]
+        },
+        {
+          "name": "Service",
+          "value": 2,
+          "f_catagory": [
+            {
+              "name": "Tourism",
+              "value": "22"
+            }
+          ]
+        }
+      ],
+      "id": 1675695838736
+    }
   ]
 }
